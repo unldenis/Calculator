@@ -1,7 +1,7 @@
 import kotlin.math.pow
 
 
-data class Scanner(private val input: String) {
+class Scanner(private val input: String) {
 
     private var current = 0
 
@@ -20,7 +20,7 @@ data class Scanner(private val input: String) {
             when (peekChar) {
                 ' ', '\n', '\t', '\r' -> current++
                 '+', '-', '*', '/', '(', ')' -> {
-                    addToken(TokenType.token_type_from_char(peekChar))
+                    addToken(TokenType.tokenTypeFromChar(peekChar))
                     current++
                 }
 

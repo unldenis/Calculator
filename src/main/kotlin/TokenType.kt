@@ -5,22 +5,22 @@ enum class TokenType {
     Cross,
     Division,
 
-    L_Paren,
-    R_Paren
+    LParen,
+    RParen
     ;
 
 
     companion object {
 
         @JvmStatic
-        fun token_type_from_char(t: Char): TokenType =
+        fun tokenTypeFromChar(t: Char): TokenType =
             when (t) {
                 '+' -> Plus
                 '-' -> Minus
                 '*' -> Cross
                 '/' -> Division
-                '(' -> L_Paren
-                ')' -> R_Paren
+                '(' -> LParen
+                ')' -> RParen
                 else -> {
                     throw RuntimeException("Operator not available for the character $t");
                 }

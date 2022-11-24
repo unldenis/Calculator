@@ -1,9 +1,30 @@
+import java.util.*
+
 fun main() {
-    print("> ")
-    val input : String? = readlnOrNull()
 
-    val scanner = Scanner(input ?: "")
-    scanner.parse()
+    while (true) {
+        print("> ")
+        val input = readlnOrNull() ?: ""
 
-    println(scanner.tokenList)
+        if(input.lowercase() == "exit") {
+            break
+        }
+
+        Scanner(input).run {
+            parse()
+
+            val parser = Parser(tokenList)
+
+            try {
+                println(parser.parse())
+            } catch (e : RuntimeException) {
+                println("Error: ${e.message}")
+            }
+
+        }
+
+
+
+    }
+
 }
